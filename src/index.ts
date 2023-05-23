@@ -1,6 +1,6 @@
-import css from "./styles.css";
-import initEventListeners from "./modules/initEventListeners";
+import "./styles.css";
+import getChoices from "./modules/getChoices";
 
 console.log("Hello!");
 
-initEventListeners();
+getChoices();
