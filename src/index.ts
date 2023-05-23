@@ -1,6 +1,6 @@
 import "./styles.css";
-import getChoices from "./modules/getChoices";
+import game from "./modules/game";
 
 console.log("Starting...");
 
-getChoices();
+game();

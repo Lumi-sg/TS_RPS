@@ -1,6 +1,18 @@
+import getPlayerChoice from "./getPlayerChoice";
 import checkRoundWinner from "./checkRoundWinner";
-export default function game(playerChoice: string, computerChoice: string) {
-	console.log(`Player: ${playerChoice}`);
-	console.log(`Computer: ${computerChoice}`);
-	console.log(checkRoundWinner(playerChoice, computerChoice));
+import getComputerChoice from "./getComputerChoice";
+import updateResult from "./updateResult";
+
+export default function game() {
+	const handleRoundResult = (result: string) => {
+		updateResult(result);
+	};
+
+	const handleChoices = (playerChoice: string) => {
+		const computerChoice = getComputerChoice();
+		const roundResult = checkRoundWinner(playerChoice, computerChoice);
+		handleRoundResult(roundResult);
+	};
+
+	getPlayerChoice(handleChoices);
 }
